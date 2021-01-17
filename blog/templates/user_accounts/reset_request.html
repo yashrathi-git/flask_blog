@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_field %}
+{% block content %}
+<h1 class="display-5">Reset Password</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ render_field(form.email,ph = "example@example.com") }}
+    {{ form.submit(class='btn btn-outline-success') }}
+</form>
+{% endblock %}

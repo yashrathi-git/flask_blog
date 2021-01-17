@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% set active_page='account' %}
+{% from 'macros.html' import render_field %}
+{% block content %}
+<div class="content-section">
+    {% include 'profile/_profile_info.html' %}
+</div>
+{% include 'posts/_posts.html' %}
+{% include 'posts/_paginate.html' %}
+{% endblock %}

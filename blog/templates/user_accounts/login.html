@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_field %}
+{% set active_page = "login" %}
+{% block content %}
+<h1 class="display-5 mt-2 mb-3">Login</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    <div class="alert {% if category=='message' %}alert-warning{% else %}alert-{{category}}{% endif %}">
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ render_field(form.email,ph = "example@example.com") }}
+    {{ render_field(form.password,ph = "Password") }}
+    <div class="form-check mb-3">
+        {{ form.remember_me(class='form-check-input') }}
+        {{ form.remember_me.label(class='form-check-label') }}
+    </div>
+    {{ form.submit(class='btn btn-outline-success') }}
+    <a href="{{url_for('user_accounts.reset_request')}}" class="link-primary">Forgot Password?</a>
+</form>
+{% endblock %}

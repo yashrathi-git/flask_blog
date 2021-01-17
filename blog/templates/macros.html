@@ -1,0 +1,19 @@
+{% macro render_field(field,ph,mt) %}
+<div class="mb-3">
+  {% if field.errors %}
+    
+        {{ field.label(class='form-label') }}
+        {{ field(class='form-control is-invalid', placeholder = ph)|safe }}
+        <div class="invalid-feedback">
+            {{ ', '.join(field.errors) }}
+        </div>
+    
+    {% else %}
+        {{ field.label(class='form-label') }}
+        {{ field(class='form-control', placeholder = ph)|safe }}
+  {% endif %}
+  <div class="form-text">
+      {{mt}}
+  </div>
+</div>
+{% endmacro %}

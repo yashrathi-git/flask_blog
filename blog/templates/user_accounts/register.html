@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_field %}
+{% set active_page = "register" %}
+{% block content %}
+<h1 class="display-5 mt-2 mb-3">Register</h1>
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ render_field(form.username,ph = "Username", mt="Should be betweem 2-30 character long and not contain any special character") }}
+    {{ render_field(form.email,ph = "example@example.com") }}
+    {{ render_field(form.password,ph = "Password",mt="Should be between 6-200 character long") }}
+    {{ render_field(form.pass_confirm,ph = "Confirm Password", mt="Repeat password") }}
+    <div class="form-check mb-3">
+    {{ form.remember_me(class='form-check-input') }}
+    {{ form.remember_me.label(class='form-check-label') }}
+    </div>
+    {{ form.submit(class='btn btn-outline-success') }}
+    <a href="{{ url_for('user_accounts.login') }}" class="ms-md-3 link-primary"><span class="d-none d-md-inline-block link-primary">Already have an account?&nbsp;&nbsp;</span>Login</a>
+</form>
+{% endblock %}

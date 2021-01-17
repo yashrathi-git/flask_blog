@@ -1,0 +1,28 @@
+
+{% set active_page = "home" %}
+{% extends 'base.html' %}
+{% block content %}
+<form>
+<div class="input-group mb-3 mt-2 mb-2">
+    
+    <input type="text" class="form-control" placeholder="Search Posts" aria-label="Search" name="search" value="{% if search_term %}{{search_term}}{% endif %}">
+    <button class="fas fa-search input-group-text" type="submit"></button>
+</div></form>
+{% if posts %}
+    {% if search_term %}
+    <p class="lead text-muted">Search Results For : {{search_term}}</p>
+    {% endif %}
+    {% include 'posts/_posts.html' %}
+{% else %}
+    {% if search_term %}
+    <p class="lead text-muted">No post available for query : {{search_term}}</p>
+    {%else%}
+    <p class="lead text-muted">No post available at the moment</p>
+    {% endif %}
+    
+{% endif %}
+
+{% include 'posts/_paginate.html' %}
+<script src="https://kit.fontawesome.com/cb2a19a906.js" crossorigin="anonymous"></script>
+
+{% endblock %}
