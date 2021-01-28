@@ -8,7 +8,7 @@ def pretty_date(time=False):
     now = datetime.now()
     if type(time) is int:
         diff = now - datetime.fromtimestamp(time)
-    elif isinstance(time,datetime):
+    elif isinstance(time, datetime):
         diff = now - time
     elif not time:
         diff = now - now
@@ -40,4 +40,3 @@ def pretty_date(time=False):
     if day_diff < 365:
         return str(int((day_diff / 30))) + " months ago"
     return str(int((day_diff / 365))) + " years ago"
-

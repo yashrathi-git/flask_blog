@@ -4,10 +4,10 @@
 <h1 class="display-5">OTP Verification</h1>
 {% if get_flashed_messages() %}
 {% for mess in get_flashed_messages() %}
-    <div class="alert alert-danger" role="alert">
-        {{mess}}
-    </div>
-  
+<div class="alert alert-danger" role="alert">
+    {{mess}}
+</div>
+
 {% endfor %}
 {% endif %}
 <form action="" method="post">

@@ -2,7 +2,8 @@
 {% extends 'base.html' %}
 {% from 'macros.html' import render_field %}
 {% block content %}
-<script src="https://cdn.tiny.cloud/1/uptfl2jnbjyn9klw3v64xkjsuy2t8vn45cwa8cu7ioegarcp/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/uptfl2jnbjyn9klw3v64xkjsuy2t8vn45cwa8cu7ioegarcp/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
 <h1 class="display-5">{{title}}</h1>
 
 <form action="" method="post" class="form">
@@ -11,7 +12,7 @@
     {{ render_field(form.short_description,ph = "Short Description") }}
     {{ render_field(form.post) }}
 
-    
+
     {{ form.submit(class='btn btn-outline-success') }}
 </form>
 <script src="{{url_for('static',filename='js/main.js')}}"></script>

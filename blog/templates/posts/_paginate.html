@@ -1,23 +1,31 @@
 <nav>
-    <ul class="pagination">
-    
-      <li class="page-item {% if posts.has_prev == False%} disabled {% endif %}">
-        <a class="page-link" href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page-1)}}{% else %}{{url_for('home',page=posts.page-1)}}{% endif %}" aria-label="Next">
+  <ul class="pagination">
 
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      {% if posts.has_prev %}
-        <li class="page-item"><a class="page-link" href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page-1)}}{% else %}{{url_for('home',page=posts.page-1)}}{% endif %}">{{posts.page-1}}</a></li>
-      {% endif %}
-      <li class="page-item active"><a class="page-link" href="#">{{posts.page}}</a></li>
-      {% if posts.has_next %}
-        <li class="page-item"><a class="page-link" href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page+1)}}{% else %}{{url_for('home',page=posts.page+1)}}{% endif %}">{{posts.page+1}}</a></li>
-      {% endif %}
-      <li class="page-item {% if posts.has_next == False%} disabled {% endif %}">
-        <a class="page-link" href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page+1)}}{% else %}{{url_for('home',page=posts.page+1)}}{% endif %}" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <li class="page-item {% if posts.has_prev == False%} disabled {% endif %}">
+      <a class="page-link"
+        href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page-1)}}{% else %}{{url_for('home',page=posts.page-1)}}{% endif %}"
+        aria-label="Next">
+
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% if posts.has_prev %}
+    <li class="page-item"><a class="page-link"
+        href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page-1)}}{% else %}{{url_for('home',page=posts.page-1)}}{% endif %}">{{posts.page-1}}</a>
+    </li>
+    {% endif %}
+    <li class="page-item active"><a class="page-link" href="#">{{posts.page}}</a></li>
+    {% if posts.has_next %}
+    <li class="page-item"><a class="page-link"
+        href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page+1)}}{% else %}{{url_for('home',page=posts.page+1)}}{% endif %}">{{posts.page+1}}</a>
+    </li>
+    {% endif %}
+    <li class="page-item {% if posts.has_next == False%} disabled {% endif %}">
+      <a class="page-link"
+        href="{% if profile %}{{url_for('profile.user_posts',username=username,page=posts.page+1)}}{% else %}{{url_for('home',page=posts.page+1)}}{% endif %}"
+        aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
