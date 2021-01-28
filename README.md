@@ -4,6 +4,9 @@
 
 ![](demo.png)
 
+## Live Demo
+https://awesome-flask-blog-app.herokuapp.com/
+
 ## Installation
 
 1. Set the following environment variables\
