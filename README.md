@@ -1,16 +1,28 @@
-# To run the project in the local machine
+# Blog Webapp
+> A blog webapp build with flask and bootstrap.
+
+
+![](demo.png)
+
+## Installation
+
 1. Set the following environment variables\
-EMAIL (gmail account email for email verification functionality)\
-PASSWORD (corresponding password)\
+**GMAIL ACCOUNT :** EMAIL & PASSWORD (For sending email from application)\
 SECRET_KEY (random string)\
-\
-2. Install all packages listed in requirments.txt file.\
-\
+
+2. Install all dependencies listed in requirments.txt file.\
+```bash
+>>> pip install -r requirements.txt
+```
+
 3. Restart terminal or cmd and naviage back to the project folder.Here run the following commands( to initialize SQLite database )\
-`flask db init`\
-`flask db migrate`\
-`flask db upgrade`\
-\
-4. Finally inside project directory containing `app.py` file execute `python app.py` to start the local server.\
+```bash
+>>> flask db init
+>>> flask db migrate -m "First migration"
+>>> flask db upgrade
+```
+<br>
+4. Finally, use `flask run` to run the local server.\
+
 
 
